@@ -1,0 +1,50 @@
+# Ignore .env files
+*.env
+
+# Ignore node_modules directory (common in both React and Express projects)
+node_modules/
+
+# Ignore build or dist directories (React and Express may have different build folders)
+# Add more specific entries based on your project structure if needed
+/build/
+/dist/
+
+# Ignore any compiled or minified files
+*.log
+*.log.*
+*.pid
+*.seed
+*.pid.lock
+*.cache
+*.db
+*.sqlite
+*.sqlite3
+*.swp
+*.swo
+*.swn
+*.bak
+*.bak.*
+*.tmp
+*.zip
+*.rar
+*.gz
+*.tar
+*.tar.gz
+*.tgz
+*.bzip
+*.bzip2
+*.7z
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+*.eot
+*.otf
+*.ttf
+*.woff
+*.woff2
+
+# Ignore Visual Studio Code settings
+.vscode/
