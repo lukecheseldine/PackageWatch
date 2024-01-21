@@ -1,10 +1,12 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, Button, useTheme } from '@mui/material'
 import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
     const theme = useTheme()
     const { isAuthenticated, logout, loginWithRedirect } = useAuth0()
+    const navigate = useNavigate()
 
     return (
         <AppBar position="static" sx={{ backgroundColor: theme.palette.background.default, boxShadow: 'none' }}>
@@ -26,13 +28,24 @@ const Navbar = () => {
                         </Button>
                     )}
                     {isAuthenticated ? (
-                        <Button
-                            color="inherit"
-                            sx={{ color: theme.palette.common.black }}
-                            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                        >
-                            Log out
-                        </Button>
+                        <>
+                            <Button
+                                color="inherit"
+                                sx={{ color: theme.palette.common.black }}
+                                onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                            >
+                                Log out
+                            </Button>
+                            <Button
+                                color="inherit"
+                                sx={{ color: theme.palette.common.black }}
+                                onClick={() => {
+                                    navigate('/settings')
+                                }}
+                            >
+                                Settings
+                            </Button>
+                        </>
                     ) : (
                         <Button
                             color="inherit"
